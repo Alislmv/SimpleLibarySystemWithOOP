@@ -1,6 +1,6 @@
 from book import *
 
-class Student():
+class Student:
     def __init__(self, studentID, name):
         self.name = name
         self.borrowedBooks = []
