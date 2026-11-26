@@ -36,7 +36,29 @@ class Libary:
             
 
 
-        # def searchBook(self, bookID):
-        # def searchStudent(self, studentID):
-        # def borrowBook(self, studentID, bookID):
-        # def returnBook(self, studentID, bookID):
+    def searchBook(self, bookID):
+        for book in self.books:
+            if book.bookID == bookID:
+                return book
+        return None
+
+    
+    def searchStudent(self, studentID):
+        for student in self.students:
+            if student.studentID == studentID:
+                return student
+        return None
+
+
+    def borrowBook(self, studentID, bookID):
+        student = self.searchStudent(studentID)
+        book = self.searchBook(bookID)
+        if student and book:
+            student.borrowBook(book)
+
+
+    def returnBook(self, studentID, bookID):
+        student = self.searchStudent(studentID)
+        book = self.searchBook(bookID)
+        if student and book:
+            student.returnBook(book)
